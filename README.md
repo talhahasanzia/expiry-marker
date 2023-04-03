@@ -44,4 +44,8 @@ Since you are beyond experiment deadline, either validate if experiment is exten
 
 This way, any code block that was written as experiment or even as temporary fix can be marked with an expiry which will indicate that an action is needed after certain period of time. 
 
+### Limitations:
+- Format of date is always dd-MM-yyyy
+- Time is considered 00:00 Hours local time zone. "02-04-2023" means 2 April 12:00am.
+- Date check depends on system running, so if system time/date is not correct this will behave unexpectedly.
 
