@@ -1,0 +1,20 @@
+plugins {
+    id("maven-publish")
+}
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/talhahasanzia/expiry-marker")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("talhahasanzia")
+                password = project.findProperty("gpr.key") ?: System.getenv("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")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
