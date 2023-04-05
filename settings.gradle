@@ -10,6 +10,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/talhahasanzia/expiry-marker")
+            credentials {
+                username = "github_username"
+                password = "github_token"
+            }
+        }
     }
 }
 rootProject.name = "expiry-marker"
