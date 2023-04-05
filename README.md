@@ -80,9 +80,6 @@ repositories {
     }
 ```
 
-## It's KSP!
-Notice this is KSP not KAPT, so yes, this library can be used with any Kotlin project including any Kotlin Multiplatform Project!
-
 
 ### Limitations:
 - Format of date is always dd-MM-yyyy
