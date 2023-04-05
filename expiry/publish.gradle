@@ -1,0 +1,42 @@
+apply plugin: 'maven-publish'
+
+def getArtifactId = { ->
+    return "expiry"
+}
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId "io.github.talhahasanzia"
+            artifactId getArtifactId()
+            version "1.0.0"
+            from components.java
+
+            pom {
+                name = 'Expiry Marker'
+                description = '@Expiry marker for setting experiment deadlines in codebase.'
+            }
+
+        }
+
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            /** Configure path of your package repository on Github
+             ** Replace GITHUB_USERID with your/organisation Github userID
+             ** and REPOSITORY with the repository name on GitHub
+             */
+            url = uri("https://maven.pkg.github.com/talhahasanzia/expiry-marker")
+            credentials {
+                /** Create github.properties in root project folder file with
+                 ** gpr.usr=GITHUB_USER_ID & gpr.key=PERSONAL_ACCESS_TOKEN
+                 ** Set env variable GPR_USER & GPR_API_KEY if not adding a properties file**/
+
+                username =  "talhahasanzia"
+                password = "token"
+            }
+        }
+    }
+}
