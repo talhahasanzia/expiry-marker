@@ -44,6 +44,46 @@ Since you are beyond experiment deadline, either validate if experiment is exten
 
 This way, any code block that was written as experiment or even as temporary fix can be marked with an expiry which will indicate that an action is needed after certain period of time. 
 
+## Get started
+Gradle:
+
+In `build.gradle`:
+```
+plugins {
+    ...
+    id 'com.google.devtools.ksp'
+}
+```
+
+In `dependencies{}`:
+```
+dependencies {
+    ...
+    implementation "io.github.talhahasanzia:expiry:1.0.0" // For annotation
+    ksp "io.github.talhahasanzia:expiry:1.0.0" // For annotation processor
+   
+}
+```
+In `repositories{}`:
+```
+repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/talhahasanzia/expiry-marker")
+            credentials {
+                username = "github_username"
+                password = "github_token"
+            }
+        }
+    }
+```
+
+## It's KSP!
+Notice this is KSP not KAPT, so yes, this library can be used with any Kotlin project including any Kotlin Multiplatform Project!
+
+
 ### Limitations:
 - Format of date is always dd-MM-yyyy
 - Time is considered 00:00 Hours local time zone. "02-04-2023" means 2 April 12:00am.
