@@ -44,7 +44,7 @@ Since you are beyond experiment deadline, either validate if experiment is exten
 
 This way, any code block that was written as experiment or even as temporary fix can be marked with an expiry which will indicate that an action is needed after certain period of time. 
 
-## Get started
+## Getting started
 Gradle:
 
 In `build.gradle`:
